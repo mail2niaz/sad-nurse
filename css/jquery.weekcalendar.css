@@ -1,0 +1,255 @@
+.wc-container {
+	font-size: 14px;
+	font-family: arial, helvetica;
+}
+
+.wc-nav {
+	padding: 1em;
+	text-align: left;
+	float: left;
+    width: 300px;
+}
+
+.wc-nav button {
+	background: none repeat scroll 0 0 #97400C;
+    border-color: #97400C;
+    color: #FFFFFF;
+    margin: 0 0.5em;
+}
+
+
+.wc-container table {
+	border-collapse: collapse;
+    border-spacing: 0;
+}
+.wc-container table td {
+	margin: 0;
+	padding: 0;
+}
+
+.wc-header {
+	background: #97400C;
+	border-top: 1px solid #97400C;
+	border-bottom: 1px solid #97400C;
+	width: 100%;
+	float: left;
+}
+
+.wc-header .wc-time-column-header {
+	width: 0%;
+}
+
+.wc-header .wc-scrollbar-shim {
+	width: 16px;
+}
+
+.wc-header .wc-day-column-header {
+	text-align: center;
+	padding: 0.4em;
+	color: #ffffff;
+}
+.wc-header td {
+	background-color: #97400C;
+}
+
+.wc-grid-timeslot-header {
+	width: 6%;
+	background: #eee;
+}
+
+
+
+.wc-scrollable-grid {
+	overflow: auto;
+	overflow-x: hidden !important;
+	overflow-y: auto !important;
+	position: relative;
+	background-color: #fff;
+	width: 100%;
+	float: left;
+}
+
+
+table.wc-time-slots {
+	width: 100%;
+	table-layout: fixed;
+	cursor: default;
+}
+
+.wc-day-column {
+	width: 13.5%;
+	/* border-left: 1px solid #ddd; */
+	overflow: visible;
+	vertical-align: top;
+}
+
+.wc-day-column-inner {
+	width: 95%;
+	position:relative;
+	height: 195px;
+	-moz-user-select: none;
+	padding: 3px 0;
+
+}
+
+.wc-time-slot-wrapper {
+	position:relative;
+	height: 1px;
+	top: 1px;
+}
+
+.wc-time-slots {
+	position: absolute;
+	width: 100%;
+}
+
+
+.wc-time-header-cell {
+	padding: 5px;
+	height: 80px; /* reference height */
+}
+
+
+.wc-time-slot {
+	border-bottom: 1px dotted #ddd;
+}
+
+.wc-hour-header {
+	text-align: right;
+}
+
+.wc-hour-end, .wc-hour-header {
+	border-bottom: 1px solid #ccc;
+	color: #555;
+}
+
+.wc-business-hours {
+	background-color: #E6EEF1;
+	border-bottom: 1px solid #ccc;
+	color: #333;
+	font-size: 1.4em;
+}
+
+.wc-business-hours .wc-am-pm {
+	font-size: 0.6em;
+}
+
+.wc-day-header-cell {
+	text-align: center;
+	vertical-align: middle;
+	padding: 5px;
+}
+
+
+
+.wc-time-slot-header .wc-header-cell {
+	text-align: right;
+	padding-right: 10px;
+}
+
+.wc-header .wc-today  {
+	font-weight: bold;
+}
+
+.wc-time-slots .wc-today {
+	background-color: #ffffcc;
+}
+
+
+.wc-cal-event {
+	/* background-color: #68a1e5; */
+	filter:alpha(opacity=80);
+	-moz-opacity:0.8;
+	-khtml-opacity: 0.8;
+	opacity: 0.8;
+	position: absolute;
+	text-align: left;
+	/* overflow: hidden; */
+	/* cursor: pointer; */
+	color: #fff;
+	width: 100%;
+	font-size: 9px;
+	height: 195px; /* min-height: 135px; */
+	display: block;
+	/* overflow-y: scroll; */
+}
+
+
+.wc-cal-event div {
+	padding: 0 3px;
+
+}
+
+.wc-cal-event .wc-time {
+	/*background-color: #2b72d0;
+	border: 1px solid #1b62c0;*/
+	color: #fff;
+	padding: 0;
+	font-weight: bold;
+}
+
+.wc-container .ui-draggable .wc-time {
+	cursor: move;
+}
+
+.wc-cal-event .wc-title {
+	position: relative;
+	background-color: #ffffff;
+	/* Simbu */
+	height: 170px;
+    overflow-y: scroll;
+    /* Simbu */
+}
+
+.wc-cal-event .wc-title b{
+	color: #000;
+}
+
+.wc-container .ui-resizable-s {
+	height: 10px;
+	bottom: -8px;
+}
+
+
+.wc-container .ui-draggable-dragging {
+   z-index: 1000;
+}
+
+.non-schedule .wc-time{
+	background-color: #FF0000 !important;
+	border: 1px solid #FF0000;
+	text-align: center;
+}
+
+.schedule .wc-time{
+	background-color: #95BCF2 !important;
+	border: 1px solid #000000;
+	/* text-align: center; */
+}
+.schedule .wc-time span{
+	margin-left: 5px;
+}
+.schedule .wc-time i{
+	 padding: 3px; cursor: pointer;
+}
+.need-schedule .wc-time{
+	background-color: #fdea12 !important;
+	border: 1px solid #fdea12;
+	color: #000000 !important;
+	text-align: center;
+}
+#calendar1{
+	float: left; width: 100%;
+}
+
+
+/* 07-05-2014 */
+.jobpatientlist{
+	color: #000;
+}
+
+.jobpatientlist li{
+	border-bottom: 1px solid #000000;
+	float: left;
+	width: 100%;
+}

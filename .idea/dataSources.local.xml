@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="MySQL - medapp@localhost" uuid="41c94d79-76c3-4d26-a069-0b52b3bda100">
+      <secret-storage>master_key</secret-storage>
+      <user-name>root</user-name>
+      <schema-pattern>medapp.*</schema-pattern>
+      <default-schemas>medapp.*</default-schemas>
+    </data-source>
+  </component>
+</project>

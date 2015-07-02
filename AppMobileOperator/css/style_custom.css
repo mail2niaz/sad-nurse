@@ -1,0 +1,206 @@
+.rstar{
+	color: #ff0000;
+    padding: 5px;
+}
+
+nav span {
+        margin-left:10px;
+      }
+
+.ui-datepicker-month{
+	width: 100px;
+	margin-bottom: 5px !important;
+}
+.ui-datepicker-year{
+	width: 100px;
+	margin-left: 10px;
+	margin-bottom: 5px !important;
+}
+.ui-datepicker-prev, .ui-datepicker-next{
+	display: none;
+}
+.ui-datepicker-header{
+	background: #97400C !important;
+}
+.ui-datepicker{
+	border: 1px solid #97400C !important;
+}
+
+
+.stdformbutton input[type=submit]{
+	margin-bottom: 5px;
+	height:32px;
+
+}
+
+.shortcuts.report-content li {
+    background: none repeat scroll 0 0 #97400C;
+    color: #FFFFFF;
+    display: block;
+    font-size: 16px;
+    height:auto;
+    width: auto;
+    padding: 5px;
+}
+
+.box p{
+	width:auto;
+	height: auto;
+	float: left;
+	padding: 5px;
+	overflow: hidden;
+
+}
+
+.box p a{
+	width:auto;
+	height: auto;
+	float: left;
+	padding: 5px;
+
+}
+
+.lchild{
+	float: right !important;
+	margin-right: 10px;
+}
+
+.widgetbox{
+    display: inline-block;
+    height: 100%;
+   margin-left: 0px;
+
+}
+
+#category-suggestions{
+	width: 282px;
+}
+.suggestions{
+	float: left;
+	border-bottom: 1px solid #BBBBBB;
+	border-left: 1px solid #BBBBBB;
+	border-right: 1px solid #BBBBBB;
+	width: 282px;
+	margin-bottom: 5px;
+}
+.suggestions li{
+	float: left;
+	width: 282px;
+	list-style: none;
+	padding-left: 5px;
+}
+
+/* Custom JS */
+.ui-helper-hidden-accessible {
+    border: 0 none;
+    clip: rect(0px, 0px, 0px, 0px);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+.ui-state-default .ui-icon {
+    background-image: url("../images/ui-icons_888888_256x240.png");
+}
+.ui-button-icon-only .ui-icon {
+    left: 50%;
+    margin-left: -8px;
+}
+.ui-menu {
+    list-style: none outside none;
+    margin: 0;
+    outline: medium none;
+    padding: 2px;
+}
+
+.ui-menu .ui-menu-item a {
+    display: block;
+    font-weight: normal;
+    line-height: 1.5;
+    min-height: 0;
+    padding: 2px 0.4em;
+    text-decoration: none;
+}
+
+.custom-combobox {
+position: relative;
+display: inline-block;
+}
+.custom-combobox-toggle {
+position: absolute;
+top: 0;
+bottom: 0;
+margin-left: -1px;
+padding: 0;
+/* support: IE7 */
+*height: 1.7em;
+*top: 0.1em;
+}
+
+.custom-combobox-input {
+margin: 0;
+padding: 0.3em;
+}
+
+.tooltip {
+    display:none;
+    background:transparent url("../images/black_arrow.png");
+    font-size:12px;
+    height:70px;
+    width:160px;
+    padding:25px;
+    color:#eee;
+  }
+
+
+.opterrortitle { background: none repeat scroll 0 0 #95BCF2 !important; color: #FFFFFF; font-weight: bold; margin: 0; padding: 0 5px;  border-radius: 5px 5px 5px 5px; }
+.opterrormsg ul{ list-style: none outside none; font-size: 11px; }
+.opterrormsg ul li{ border-bottom: 1px solid #000000; }
+
+.add_copy_job{
+	float: left; margin-left: 12px;
+}
+.navbtn{
+	float: left;margin-left: 15px;
+}
+
+.navbtn .scrollbar{
+	float: left; /* margin-left: 45px;*/
+}
+.navbtn .navicon{
+	float: left; margin-left: 10px;
+}
+.error_msg{
+	/* color: #F30B0B; */
+}
+.custom-combobox{
+	width: 100%;
+}
+
+.opterrormsg{ width: 97%; float:left; border: 1px solid rgb(204, 204, 204); border-radius: 8px 8px 8px 8px; padding: 6px; margin-top: 5px; }
+
+.userinfo nav span{
+	float: left; padding: 2px; margin: 0px;
+}
+.btn-back{
+	background: red;
+	color: #ffffff;
+}
+.btn-conform{
+	background: green;
+	color: #ffffff;
+}
+.opterrormsg ul li{
+	list-style: none;
+}
+.redcolor{
+	color: red;
+}
+.greencolor{
+	color: green;
+}
+.custom-combobox-input{
+	width: 95%;
+}

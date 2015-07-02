@@ -1,0 +1,348 @@
+<?php
+Class Intervent_model extends CI_Model
+{
+	 private $tbl_mt_role = 'mt_role';
+	 private $tbl_intervention_fields = 'intervention_fields';
+	 private $tbl_intervention_type = 'intervention_types';
+	 private $tbl_intervention_type_assign = 'intervention_types_assign';
+
+	 public function add_dform()
+	{
+		$time = time();
+		$data=array(
+		'int_type_id'=>$this->input->post('int_type_id'),
+		'role'=>$this->input->post('role'),
+		'status'=>$this->input->post('status'),
+		'last_modify'=>$time,
+		);
+
+		$this->db->insert($this->tbl_intervention_type_assign,$data);
+		return mysql_insert_id();
+	}
+
+
+	 public function edit_dform()
+	{
+		$time = time();
+		$int_type_asg_id = $this->input->post('int_type_asg_id');
+		$data=array(
+		'int_type_id'=>$this->input->post('int_type_id'),
+		'role'=>$this->input->post('role'),
+		'status'=>$this->input->post('status'),
+		'last_modify'=>$time,
+		);
+		$this->db->where('int_type_asg_id',$int_type_asg_id);
+		$this->db->update($this->tbl_intervention_type_assign,$data);
+		return mysql_insert_id();
+	}
+
+ public function add_dfields()
+	{
+		$time = time();
+
+		$itype_asg_id = $this->input->post('itype_asg_id');
+		$label_name = $this->input->post('label_name');
+		$type = $this->input->post('type');
+		$opt_val = $this->input->post('opt_val');
+		$val_req = $this->input->post('val_req');
+		$sort_val = $this->input->post('sort_val');
+		$visible = $this->input->post('visible');
+
+		$cnt = count(array_filter($label_name));
+		for($i=0;$i<$cnt;$i++) {
+			$ins = mysql_query("INSERT INTO intervention_fields(`int_type_asg_id`, `label_name`, `type`, `options`, `required`, `order`, `visible`, `created_date`) VALUES('$itype_asg_id','$label_name[$i]','$type[$i]','$opt_val[$i]','$val_req[$i]','$sort_val[$i]','$visible[$i]','$time')");
+                  /*Log table */
+                  $last_insert_id = mysql_insert_id();
+                  $sel_value_status = "select * from intervention_fields WHERE fid = '$last_insert_id'";
+                  $q_status = mysql_query($sel_value_status);
+                  $val_status = mysql_fetch_assoc($q_status);
+                  $json_values_status = json_encode($val_status);
+                  $dt = new DateTime();
+                  $date_created = $dt->format('YmdHis');
+                  $insert_status = "INSERT INTO `dblogs` (`idutente`, `dataora`, `operazione`,`tabella`, `idtabella`, `data`,`rollbackfrom`, `canrollback`, `idpadre`) VALUES ('50000', '$date_created', 'I','intervention_fields', '$last_insert_id','$json_values_status','', 'N', '0')";
+                  mysql_query($insert_status);
+    	}
+
+	}
+
+public function upd_singlefield(){
+	$time = time();
+
+		$fid = $this->input->post('fid');
+		$data=array(
+		'label_name'=>$this->input->post('label_name'),
+		'type'=>$this->input->post('type'),
+		'options'=>$this->input->post('opt_val'),
+		'required'=>$this->input->post('val_req'),
+		'order'=>$this->input->post('sort_val'),
+		'visible'=>$this->input->post('visible'),
+		'edited_date'=>$time,
+		);
+		$this->db->where('fid',$fid);
+		$this->db->update($this->tbl_intervention_fields,$data);
+		return $fid;
+}
+
+function getinterform($itype_asg_id){
+		$this->db->where('int_type_asg_id', $itype_asg_id);
+		return $this->db->get($this->tbl_intervention_type_assign);
+}
+
+function getinterfield($fid,$itype_asg_id){
+		$this->db->where('fid', $fid);
+		$this->db->where('int_type_asg_id', $itype_asg_id);
+		return $this->db->get($this->tbl_intervention_fields);
+ }
+
+public function deletedynform($itype_asg_id)
+{
+	$this->db->where('int_type_asg_id',$itype_asg_id);
+	$this->db->delete($this->tbl_intervention_type_assign);
+
+	$this->db->where('int_type_asg_id',$itype_asg_id);
+	$this->db->delete('intervention_fields');
+}
+
+public function deletedynfield($fid)
+{
+	$this->db->where('fid',$fid);
+	$this->db->delete('intervention_fields');
+}
+
+public function check_label_exist(){
+	$int_type_asg_id = $this->input->post('itype_asg_id');
+	$fid = $this->input->post('fid');
+	$label_name = $this->input->post('label_name');
+	if(is_array($label_name)){
+		$cnt = count(array_filter($label_name));
+	for($i=0;$i<$cnt;$i++) {
+	$this->db->where("label_name",$label_name[$i]);
+	$this->db->where("int_type_asg_id",$int_type_asg_id);
+	if(!empty($fid)){
+		$this->db->where('fid !=', $fid);
+	}
+	$query=$this->db->get("intervention_fields");
+	if($query->num_rows()>0)
+		{
+			 return true;
+		}else
+			{
+		 return false;
+		}
+	}
+
+}else{
+	$this->db->where("label_name",$label_name);
+	$this->db->where("int_type_asg_id",$int_type_asg_id);
+	if(!empty($fid)){
+		$this->db->where('fid !=', $fid);
+	}
+	$query=$this->db->get("intervention_fields");
+		if($query->num_rows()>0)
+		{
+			 return true;
+		}else
+			{
+		 return false;
+}
+}
+
+}
+
+public function check_order_exist(){
+	$int_type_asg_id = $this->input->post('itype_asg_id');
+	$fid = $this->input->post('fid');
+	$sort_val = $this->input->post('sort_val');
+	if(is_array($sort_val)){
+	$cnt = count(array_filter($sort_val));
+	for($i=0;$i<$cnt;$i++) {
+	$this->db->where("order",$sort_val[$i]);
+	$this->db->where("int_type_asg_id",$int_type_asg_id);
+	if(!empty($fid)){
+		$this->db->where('fid !=', $fid);
+	}
+	$query=$this->db->get("intervention_fields");
+		if($query->num_rows()>0)
+		{
+			 return true;
+		}else
+			{
+		 return false;
+
+}
+	}
+
+}else{
+	$this->db->where("order",$sort_val);
+	$this->db->where("int_type_asg_id",$int_type_asg_id);
+	if(!empty($fid)){
+		$this->db->where('fid !=', $fid);
+	}
+	$query=$this->db->get("intervention_fields");
+		if($query->num_rows()>0)
+		{
+			 return true;
+		}else
+			{
+		 return false;
+
+}
+}
+}
+
+public function check_dynamice_form_exist(){
+	$int_type_id = $this->input->post('int_type_id');
+	$role = $this->input->post('role');
+	$this->db->where("int_type_id",$int_type_id);
+	$this->db->where("role",$role);
+	$query=$this->db->get("intervention_types_assign");
+	if($query->num_rows()>0)
+		{
+			 return true;
+		}else
+			{
+		 return false;
+
+		}
+}
+
+ public function add_invt_data()
+	{
+		$time = time();
+		if($this->input->post('puserrole') != ""){
+			$puserrole = implode(",", $this->input->post('puserrole'));
+		}else{
+			$puserrole = "";
+		}
+		if($this->input->post('sec_userrole') != ""){
+			$sec_userrole = implode(",", $this->input->post('sec_userrole'));
+		}else{
+			$sec_userrole = "";
+		}
+		if($this->input->post('sup_userrole') != ""){
+			$sup_userrole = implode(",", $this->input->post('sup_userrole'));
+		}else{
+			$sup_userrole = "";
+		}
+
+		if($this->input->post('pmandatory') == "on"){
+			$pmandatory = '1';
+		}else{
+			$pmandatory = '0';
+		}
+		if($this->input->post('sec_mandatory') == "on"){
+			$sec_mandatory = '1';
+		}else{
+			$sec_mandatory = '0';
+		}
+		if($this->input->post('sup_mandatory') == "on"){
+			$sup_mandatory = '1';
+		}else{
+			$sup_mandatory = '0';
+		}
+		if($this->input->post('mint') != ""){
+			$min = $this->input->post('mint');
+		}else{
+			$min = "00";
+		}
+
+		$duration = $this->input->post('hours').":".$min;
+		$data=array(
+		'int_code'=>$this->input->post('code'),
+		'int_type'=>$this->input->post('type'),
+		'int_time'=>$duration,
+		'primary_mandatory'=>$pmandatory,
+		'secondary_mandatory'=>$sec_mandatory,
+		'supervisor_mandatory'=>$sup_mandatory,
+		'primary_roles'=>$puserrole,
+		'secondary_roles'=>$sec_userrole,
+		'supervisor_roles'=>$sup_userrole,
+		'last_modify'=>$time,
+		);
+		$this->db->insert($this->tbl_intervention_type,$data);
+		return mysql_insert_id();
+	}
+
+function getintertype($intid){
+		$this->db->where('int_type_id', $intid);
+		return $this->db->get($this->tbl_intervention_type);
+}
+
+ public function update_invt_data()
+	{
+		$time = time();
+		$int_type_id = $this->input->post('int_type_id');
+		if($this->input->post('puserrole') != ""){
+			$puserrole = implode(",", $this->input->post('puserrole'));
+		}else{
+			$puserrole = "";
+		}
+		if($this->input->post('sec_userrole') != ""){
+			$sec_userrole = implode(",", $this->input->post('sec_userrole'));
+		}else{
+			$sec_userrole = "";
+		}
+		if($this->input->post('sup_userrole') != ""){
+			$sup_userrole = implode(",", $this->input->post('sup_userrole'));
+		}else{
+			$sup_userrole = "";
+		}
+
+		if($this->input->post('pmandatory') == "on"){
+			$pmandatory = '1';
+		}else{
+			$pmandatory = '0';
+		}
+		if($this->input->post('sec_mandatory') == "on"){
+			$sec_mandatory = '1';
+		}else{
+			$sec_mandatory = '0';
+		}
+		if($this->input->post('sup_mandatory') == "on"){
+			$sup_mandatory = '1';
+		}else{
+			$sup_mandatory = '0';
+		}
+
+		if($this->input->post('mint') != ""){
+			$min = $this->input->post('mint');
+		}else{
+			$min = "00";
+		}
+
+		$duration = $this->input->post('hours').":".$min;
+
+		$data=array(
+		'int_code'=>$this->input->post('code'),
+		'int_type'=>$this->input->post('type'),
+		'int_time'=>$duration,
+		'primary_mandatory'=>$pmandatory,
+		'secondary_mandatory'=>$sec_mandatory,
+		'supervisor_mandatory'=>$sup_mandatory,
+		'primary_roles'=>$puserrole,
+		'secondary_roles'=>$sec_userrole,
+		'supervisor_roles'=>$sup_userrole,
+		'last_modify'=>$time,
+		);
+		$this->db->where('int_type_id',$int_type_id);
+		$this->db->update($this->tbl_intervention_type,$data);
+		return mysql_insert_id();
+	}
+
+public function deleteinttype($int_type_id)
+{
+	$this->db->where('int_type_id',$int_type_id);
+	$this->db->delete($this->tbl_intervention_type);
+}
+
+public function InterventionTypes($int_type_id='')
+{
+	if($int_type_id != ''){
+		$query = $this->db->query("SELECT * FROM intervention_types where int_type_id='$int_type_id'");
+	}else{
+		$query = $this->db->query("SELECT * FROM intervention_types WHERE int_status = '1'");
+	}
+	return $query;
+}
+}
+?>

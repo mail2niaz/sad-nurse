@@ -1,0 +1,43 @@
+@import url("pepper-ginder-custom.css");
+.ui-datepicker-prev, .ui-datepicker-next {
+    display: block !important;
+}
+.ui-datepicker-prev, .ui-datepicker-next {
+	background: none !important;
+}
+.code-box {clear:both;}
+.code {
+	padding: 5px;
+	color: #333;
+	background-color: white;
+	font: small monospace;
+}
+
+.ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active {
+	background: #F8F7F6 url('../images/ui-bg_fine-grain_10_f8f7f6_60x60.png') 50% 50% repeat;
+}
+
+/* begin: jQuery UI Datepicker moving pixels fix */
+table.ui-datepicker-calendar {border-collapse: separate;}
+.ui-datepicker-calendar td {border: 1px solid transparent;}
+/* end: jQuery UI Datepicker moving pixels fix */
+
+/* begin: jQuery UI Datepicker emphasis on selected dates */
+.ui-datepicker .ui-datepicker-calendar .ui-state-highlight a {
+	background: #743620 none !important;
+	color: white;
+}
+/* end: jQuery UI Datepicker emphasis on selected dates */
+
+
+/* begin: jQuery UI Datepicker hide datepicker helper */
+#ui-datepicker-div {display:none;}
+/* end: jQuery UI Datepicker hide datepicker helper */
+
+.ui-datepicker-week-end a, .ui-datepicker-week-end span{
+	background: Yellow !important;
+	color: #000000;
+}
+.ui-state-disabled span{
+	background: green;
+}

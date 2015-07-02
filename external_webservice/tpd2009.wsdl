@@ -1,0 +1,339 @@
+<definitions name='TpdService' targetNamespace='http://zensistemi.com/tpd/type' xmlns='http://schemas.xmlsoap.org/wsdl/' xmlns:soap='http://schemas.xmlsoap.org/wsdl/soap/' xmlns:tns='http://zensistemi.com/tpd/type' xmlns:xsd='http://www.w3.org/2001/XMLSchema'>
+ <types>
+  <xs:schema targetNamespace='http://zensistemi.com/tpd/type' version='1.0' xmlns:tns='http://zensistemi.com/tpd/type' xmlns:xs='http://www.w3.org/2001/XMLSchema'>
+   <xs:element name='SOAPException' type='tns:SOAPException'/>
+   <xs:element name='deleteAnagrafica' type='tns:deleteAnagrafica'/>
+   <xs:element name='deleteAnagraficaResponse' type='tns:deleteAnagraficaResponse'/>
+   <xs:element name='deleteEvento' type='tns:deleteEvento'/>
+   <xs:element name='deleteEventoResponse' type='tns:deleteEventoResponse'/>
+   <xs:element name='deleteUtente' type='tns:deleteUtente'/>
+   <xs:element name='deleteUtenteResponse' type='tns:deleteUtenteResponse'/>
+   <xs:element name='sendAnagrafica' type='tns:sendAnagrafica'/>
+   <xs:element name='sendAnagraficaResponse' type='tns:sendAnagraficaResponse'/>
+   <xs:element name='sendEvento' type='tns:sendEvento'/>
+   <xs:element name='sendEventoResponse' type='tns:sendEventoResponse'/>
+   <xs:element name='sendUtente' type='tns:sendUtente'/>
+   <xs:element name='sendUtenteResponse' type='tns:sendUtenteResponse'/>
+   <xs:element name='tAnagrafica' type='tns:tAnagrafica'/>
+   <xs:element name='tEvento' type='tns:tEvento'/>
+   <xs:element name='tUtente' type='tns:tUtente'/>
+   <xs:complexType name='deleteUtente'>
+    <xs:sequence>
+     <xs:element name='user' type='xs:string'/>
+     <xs:element name='password' type='xs:string'/>
+     <xs:element name='codiceFiscale' type='xs:string'/>
+     <xs:element name='codiceContratto' type='xs:string'/>
+     <xs:element name='data' type='xs:string'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='deleteUtenteResponse'>
+    <xs:sequence>
+     <xs:element name='result' type='xs:boolean'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='SOAPException'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='message' type='xs:string'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='deleteAnagrafica'>
+    <xs:sequence>
+     <xs:element name='user' type='xs:string'/>
+     <xs:element name='password' type='xs:string'/>
+     <xs:element name='codiceFiscale' type='xs:string'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='deleteAnagraficaResponse'>
+    <xs:sequence>
+     <xs:element name='result' type='xs:boolean'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='deleteEvento'>
+    <xs:sequence>
+     <xs:element name='user' type='xs:string'/>
+     <xs:element name='password' type='xs:string'/>
+     <xs:element name='idEvento' type='xs:string'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='deleteEventoResponse'>
+    <xs:sequence>
+     <xs:element name='result' type='xs:boolean'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='sendAnagrafica'>
+    <xs:sequence>
+     <xs:element name='user' type='xs:string'/>
+     <xs:element name='password' type='xs:string'/>
+     <xs:element name='anagrafica' type='tns:tAnagrafica'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='tAnagrafica'>
+    <xs:sequence>
+     <xs:element name='cognome' type='xs:string'/>
+     <xs:element name='nome' type='xs:string'/>
+     <xs:element name='sesso' type='tns:genereEnum'/>
+     <xs:element name='codiceFiscale' type='xs:string'/>
+     <xs:element name='dataNascita' type='xs:string'/>
+     <xs:element name='comuneNascitaIstat' type='xs:string'/>
+     <xs:element name='comuneNascitaDesc' type='xs:string'/>
+     <xs:element name='comuneResidenzaIstat' type='xs:string'/>
+     <xs:element name='comuneResidenzaDesc' type='xs:string'/>
+     <xs:element name='indirizzoResidenza' type='xs:string'/>
+     <xs:element name='capResidenza' type='xs:string'/>
+     <xs:element name='comuneDomicilioIstat' type='xs:string'/>
+     <xs:element name='comuneDomicilioDesc' type='xs:string'/>
+     <xs:element name='indirizzoDomicilio' type='xs:string'/>
+     <xs:element name='capDomicilio' type='xs:string'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='sendAnagraficaResponse'>
+    <xs:sequence>
+     <xs:element name='result' type='xs:boolean'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='sendEvento'>
+    <xs:sequence>
+     <xs:element name='user' type='xs:string'/>
+     <xs:element name='password' type='xs:string'/>
+     <xs:element name='evento' type='tns:tEvento'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='tEvento'>
+    <xs:sequence>
+     <xs:element name='idEventoTrasmesso' type='xs:string'/>
+     <xs:element name='codiceContratto' type='xs:string'/>
+     <xs:element name='codiceSottoContratto' type='xs:string'/>
+     <xs:element minOccurs='0' name='codicePresidio' type='xs:string'/>
+     <xs:element name='CFOperatore' type='xs:string'/>
+     <xs:element name='descOperatore' type='xs:string'/>
+     <xs:element name='tipoEvento' type='tns:eventoEnum'/>
+     <xs:element minOccurs='0' name='codiceUtente' type='xs:string'/>
+     <xs:element minOccurs='0' name='idAccesso' type='xs:string'/>
+     <xs:element name='dataTimeInizioEvento' type='xs:string'/>
+     <xs:element minOccurs='0' name='durataEvento' type='xs:double'/>
+     <xs:element minOccurs='0' name='dataTimeInizioPrestazione' type='xs:string'/>
+     <xs:element minOccurs='0' name='durataPrestazione' type='xs:double'/>
+     <xs:element minOccurs='0' name='codicePrestazione' type='xs:string'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='sendEventoResponse'>
+    <xs:sequence>
+     <xs:element name='result' type='xs:boolean'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='sendUtente'>
+    <xs:sequence>
+     <xs:element name='user' type='xs:string'/>
+     <xs:element name='password' type='xs:string'/>
+     <xs:element name='utente' type='tns:tUtente'/>
+     <xs:element minOccurs='0' name='data' type='xs:string'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='tUtente'>
+    <xs:sequence>
+     <xs:element name='codiceFiscale' type='xs:string'/>
+     <xs:element name='codiceContratto' type='xs:string'/>
+     <xs:element name='codiceSottoContratto' type='xs:string'/>
+     <xs:element minOccurs='0' name='codiceUtenteEsterno' type='xs:string'/>
+     <xs:element minOccurs='0' name='autosufficiente' type='xs:string'/>
+     <xs:element minOccurs='0' name='dataNonAutosufficiente' type='xs:string'/>
+     <xs:element name='dataDa' type='xs:string'/>
+     <xs:element minOccurs='0' name='dataA' type='xs:string'/>
+     <xs:element minOccurs='0' name='tariffaPersonalizzata' type='xs:double'/>
+     <xs:element minOccurs='0' name='dataDecorrenzaTariffa' type='xs:string'/>
+     <xs:element minOccurs='0' name='dataDecorrenzaSottocontratto' type='xs:string'/>
+     <xs:element minOccurs='0' name='opzioni' type='tns:ListOpzioni'/>
+     <xs:element minOccurs='0' name='clienti' type='tns:ListClienti'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='ListOpzioni'>
+    <xs:sequence>
+     <xs:element maxOccurs='unbounded' minOccurs='0' name='listOpzioni' type='xs:string'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='ListClienti'>
+    <xs:sequence>
+     <xs:element maxOccurs='unbounded' minOccurs='0' name='listClienti' type='tns:tCliente'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='tCliente'>
+    <xs:sequence>
+     <xs:element name='codiceFiscale' type='xs:string'/>
+     <xs:element name='percentuale' type='xs:string'/>
+     <xs:element name='codiceClienteEsterno' type='xs:string'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='sendUtenteResponse'>
+    <xs:sequence>
+     <xs:element name='result' type='xs:boolean'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:simpleType name='genereEnum'>
+    <xs:restriction base='xs:string'>
+     <xs:enumeration value='M'/>
+     <xs:enumeration value='F'/>
+    </xs:restriction>
+   </xs:simpleType>
+   <xs:simpleType name='eventoEnum'>
+    <xs:restriction base='xs:string'>
+     <xs:enumeration value='A'/>
+     <xs:enumeration value='T'/>
+     <xs:enumeration value='I'/>
+     <xs:enumeration value='F'/>
+     <xs:enumeration value='P'/>
+    </xs:restriction>
+   </xs:simpleType>
+  </xs:schema>
+ </types>
+ <message name='WSTPD2009_sendEvento'>
+  <part element='tns:sendEvento' name='sendEvento'></part>
+ </message>
+ <message name='WSTPD2009_deleteUtenteResponse'>
+  <part element='tns:deleteUtenteResponse' name='deleteUtenteResponse'></part>
+ </message>
+ <message name='WSTPD2009_deleteAnagrafica'>
+  <part element='tns:deleteAnagrafica' name='deleteAnagrafica'></part>
+ </message>
+ <message name='WSTPD2009_sendUtente'>
+  <part element='tns:sendUtente' name='sendUtente'></part>
+ </message>
+ <message name='SOAPException'>
+  <part element='tns:SOAPException' name='SOAPException'></part>
+ </message>
+ <message name='WSTPD2009_deleteEvento'>
+  <part element='tns:deleteEvento' name='deleteEvento'></part>
+ </message>
+ <message name='WSTPD2009_deleteEventoResponse'>
+  <part element='tns:deleteEventoResponse' name='deleteEventoResponse'></part>
+ </message>
+ <message name='WSTPD2009_sendAnagraficaResponse'>
+  <part element='tns:sendAnagraficaResponse' name='sendAnagraficaResponse'></part>
+ </message>
+ <message name='WSTPD2009_deleteUtente'>
+  <part element='tns:deleteUtente' name='deleteUtente'></part>
+ </message>
+ <message name='WSTPD2009_sendEventoResponse'>
+  <part element='tns:sendEventoResponse' name='sendEventoResponse'></part>
+ </message>
+ <message name='WSTPD2009_deleteAnagraficaResponse'>
+  <part element='tns:deleteAnagraficaResponse' name='deleteAnagraficaResponse'></part>
+ </message>
+ <message name='WSTPD2009_sendAnagrafica'>
+  <part element='tns:sendAnagrafica' name='sendAnagrafica'></part>
+ </message>
+ <message name='WSTPD2009_sendUtenteResponse'>
+  <part element='tns:sendUtenteResponse' name='sendUtenteResponse'></part>
+ </message>
+ <portType name='WSTPD2009'>
+  <operation name='deleteAnagrafica' parameterOrder='deleteAnagrafica'>
+   <input message='tns:WSTPD2009_deleteAnagrafica'></input>
+   <output message='tns:WSTPD2009_deleteAnagraficaResponse'></output>
+   <fault message='tns:SOAPException' name='SOAPException'></fault>
+  </operation>
+  <operation name='deleteEvento' parameterOrder='deleteEvento'>
+   <input message='tns:WSTPD2009_deleteEvento'></input>
+   <output message='tns:WSTPD2009_deleteEventoResponse'></output>
+   <fault message='tns:SOAPException' name='SOAPException'></fault>
+  </operation>
+  <operation name='deleteUtente' parameterOrder='deleteUtente'>
+   <input message='tns:WSTPD2009_deleteUtente'></input>
+   <output message='tns:WSTPD2009_deleteUtenteResponse'></output>
+   <fault message='tns:SOAPException' name='SOAPException'></fault>
+  </operation>
+  <operation name='sendAnagrafica' parameterOrder='sendAnagrafica'>
+   <input message='tns:WSTPD2009_sendAnagrafica'></input>
+   <output message='tns:WSTPD2009_sendAnagraficaResponse'></output>
+   <fault message='tns:SOAPException' name='SOAPException'></fault>
+  </operation>
+  <operation name='sendEvento' parameterOrder='sendEvento'>
+   <input message='tns:WSTPD2009_sendEvento'></input>
+   <output message='tns:WSTPD2009_sendEventoResponse'></output>
+   <fault message='tns:SOAPException' name='SOAPException'></fault>
+  </operation>
+  <operation name='sendUtente' parameterOrder='sendUtente'>
+   <input message='tns:WSTPD2009_sendUtente'></input>
+   <output message='tns:WSTPD2009_sendUtenteResponse'></output>
+   <fault message='tns:SOAPException' name='SOAPException'></fault>
+  </operation>
+ </portType>
+ <binding name='WSTPD2009Binding' type='tns:WSTPD2009'>
+  <soap:binding style='document' transport='http://schemas.xmlsoap.org/soap/http'/>
+  <operation name='deleteAnagrafica'>
+   <soap:operation soapAction='deleteAnagrafica'/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+   <fault name='SOAPException'>
+    <soap:fault name='SOAPException' use='literal'/>
+   </fault>
+  </operation>
+  <operation name='deleteEvento'>
+   <soap:operation soapAction='deleteEvento'/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+   <fault name='SOAPException'>
+    <soap:fault name='SOAPException' use='literal'/>
+   </fault>
+  </operation>
+  <operation name='deleteUtente'>
+   <soap:operation soapAction='deleteUtente'/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+   <fault name='SOAPException'>
+    <soap:fault name='SOAPException' use='literal'/>
+   </fault>
+  </operation>
+  <operation name='sendAnagrafica'>
+   <soap:operation soapAction='sendAnagrafica'/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+   <fault name='SOAPException'>
+    <soap:fault name='SOAPException' use='literal'/>
+   </fault>
+  </operation>
+  <operation name='sendEvento'>
+   <soap:operation soapAction='sendEvento'/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+   <fault name='SOAPException'>
+    <soap:fault name='SOAPException' use='literal'/>
+   </fault>
+  </operation>
+  <operation name='sendUtente'>
+   <soap:operation soapAction='sendUtente'/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+   <fault name='SOAPException'>
+    <soap:fault name='SOAPException' use='literal'/>
+   </fault>
+  </operation>
+ </binding>
+ <service name='TpdService'>
+  <port binding='tns:WSTPD2009Binding' name='TpdPort'>
+   <soap:address location='http://tpdtest.zensistemi.com:8080/TPD2009/tpd2009'/>
+  </port>
+ </service>
+</definitions>

@@ -1,0 +1,31 @@
+<?php
+
+$lang['date_year'] = 'Anno';
+$lang['date_years'] = 'Anni';
+$lang['date_month'] = 'Mese';
+$lang['date_months'] = 'Mesi';
+$lang['date_week'] = 'Settimana';
+$lang['date_weeks'] = 'Settimane';
+$lang['date_day'] = 'Giorno';
+$lang['date_days'] = 'Giorni';
+$lang['date_hour'] = 'Ora';
+$lang['date_hours'] = 'Ore';
+$lang['date_minute'] = 'Minuto';
+$lang['date_minutes'] = 'Minuti';
+$lang['date_second'] = 'Secondo';
+$lang['date_seconds'] = 'Secondi';
+$lang['UM12'] = '(UTC -12:00) Baker/Howland Island';
+$lang['UM11'] = '(UTC -11:00) Samoa Time Zone, Niue';
+$lang['UM10'] = '(UTC -10:00) Hawaii-Aleutian Standard Time, Cook Islands, Tahiti';
+$lang['UM95'] = '(UTC -9:30) Marquesas Islands';
+$lang['UM9'] = '(UTC -9:00) Alaska Standard Time, Gambier Islands';
+$lang['UM8'] = '(UTC -8:00) Pacific Standard Time, Clipperton Island';
+$lang['UM7'] = '(UTC -7:00) Mountain Standard Time';
+$lang['UM6'] = '(UTC -6:00) Central Standard Time';
+$lang['UM5'] = '(UTC -5:00) Eastern Standard Time, Western Caribbean Standard Time';
+$lang['UM45'] = '(UTC -4:30) Venezuelan Standard Time';
+$lang['UM4'] = '(UTC -4:00) Atlantic Standard Time, Eastern Caribbean Standard Time';
+$lang['UM35'] = '(UTC -3:30) Newfoundland Standard Time';
+$lang['UM3'] = '(UTC -3:00) Argentina, Brazil, French Guiana, Uruguay';
+$lang['UM2'] = '(UTC -2:00) South Georgia/South Sandwich Islands';
+$lang['UM1'] = '(UTC -1:00) Azores, Cape Verde Islan

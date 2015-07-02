@@ -1,0 +1,499 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="MySQL - medapp@localhost" uuid="41c94d79-76c3-4d26-a069-0b52b3bda100">
+    <database-info product="MySQL" version="5.5.40-0ubuntu0.14.04.1" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.35 ( Revision: 5fb9c5849535c13917c2cf9baaece6ef9693ef27 )">
+      <extra-name-characters>#@</extra-name-characters>
+      <identifier-quote-string>`</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="exact" quoted-identifiers="exact"/>
+    <schema name="" catalog="medapp"/>
+    <table name="Allergies" schema="" catalog="medapp" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="name" sqlType="VARCHAR" precision="45" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="id"/>
+    </table>
+    <table name="admin_session_setup" schema="" catalog="medapp" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="morn_start_time" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="morn_end_time" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="created_date" sqlType="BIGINT" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="last_modify" sqlType="BIGINT" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <primary-key name="PRIMARY" columns="id"/>
+    </table>
+    <table name="admin_types" schema="" catalog="medapp" type="TABLE">
+      <column name="tid" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="type_name" sqlType="VARCHAR" precision="100" scale="0" nullable="false" jdbcType="12"/>
+      <column name="add" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" def="Mg==" remarks="MS0gQWN0aXZlLCAyLSBEZWFjdGl2ZQ=="/>
+      <column name="edit" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" def="Mg==" remarks="MS0gQWN0aXZlLCAyLSBEZWFjdGl2ZQ=="/>
+      <column name="view" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" def="Mg==" remarks="MS0gQWN0aXZlLCAyLSBEZWFjdGl2ZQ=="/>
+      <column name="delete" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" remarks="MS0gQWN0aXZlLCAyLSBEZWFjdGl2ZQ=="/>
+      <column name="tstatus" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" def="MQ==" remarks="MS0gQWN0aXZlLCAwLSBEZWFjdGl2ZQ=="/>
+      <column name="operator" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" def="Mg=="/>
+      <column name="patient" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" def="Mg=="/>
+      <column name="job" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" def="Mg=="/>
+      <column name="cms" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" def="Mg=="/>
+      <column name="intervent" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" def="Mg=="/>
+      <column name="report" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" def="Mg=="/>
+      <column name="contract" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" def="Mg=="/>
+      <primary-key name="PRIMARY" columns="tid"/>
+    </table>
+    <table name="admin_webservice" schema="" catalog="medapp" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="url" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="platform_code" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="created_date" sqlType="BIGINT" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="last_modify" sqlType="BIGINT" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <primary-key name="PRIMARY" columns="id"/>
+    </table>
+    <table name="admins" schema="" catalog="medapp" type="TABLE">
+      <column name="aid" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="username" sqlType="VARCHAR" precision="200" scale="0" nullable="false" jdbcType="12"/>
+      <column name="password" sqlType="VARCHAR" precision="50" scale="0" nullable="false" jdbcType="12"/>
+      <column name="name" sqlType="VARCHAR" precision="200" scale="0" nullable="false" jdbcType="12"/>
+      <column name="email" sqlType="VARCHAR" precision="200" scale="0" nullable="false" jdbcType="12"/>
+      <column name="type" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" def="Mg==" remarks="MS0gU3VwZXIgYWRtaW4sIDItIHN1YiBhZG1pbg=="/>
+      <column name="last_login" sqlType="BIGINT" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="status" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="aid"/>
+    </table>
+    <table name="app_holidays" schema="" catalog="medapp" type="TABLE">
+      <column name="hid" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="hdate" sqlType="BIGINT" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="reason" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1"/>
+      <primary-key name="PRIMARY" columns="hid"/>
+    </table>
+    <table name="assign_job_list" schema="" catalog="medapp" type="TABLE">
+      <column name="aid" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="request_id" sqlType="VARCHAR" precision="50" scale="0" nullable="false" jdbcType="12"/>
+      <column name="contract_int_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="intervent_type_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="patient_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="pry_oid" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="p200_code_op1" sqlType="VARCHAR" precision="50" scale="0" nullable="false" jdbcType="12"/>
+      <column name="sec_oid" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="p200_code_op2" sqlType="VARCHAR" precision="50" scale="0" nullable="false" jdbcType="12"/>
+      <column name="sup_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="p200_code_op3" sqlType="VARCHAR" precision="50" scale="0" nullable="false" jdbcType="12"/>
+      <column name="cid" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" remarks="Q29udHJhY3QgSUQ="/>
+      <column name="start_time_hour" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="start_time_min" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="end_time_hour" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="end_time_min" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="sel_week_day" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="week" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="year" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="status" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" def="MQ==" remarks="MS1PcGVuLCAyLSBDbG9zZWQ="/>
+      <column name="job_date_assign" sqlType="DATE" precision="10" scale="0" nullable="false" jdbcType="91"/>
+      <primary-key name="PRIMARY" columns="aid"/>
+      <index name="job_index" unique="false" columns="pry_oid,sec_oid,sup_id,start_time_hour,start_time_min,job_date_assign"/>
+    </table>
+    <table name="assign_job_status" schema="" catalog="medapp" type="TABLE">
+      <column name="ajob_status_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="request_id" sqlType="BIGINT" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="aid" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="oid" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="opt_type" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="status" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" def="MQ==" remarks="MS0gT1BFTiwgMi0gQ0xPU0VE"/>
+      <column name="closed_datetime" sqlType="BIGINT" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <primary-key name="PRIMARY" columns="ajob_status_id"/>
+    </table>
+    <table name="assign_pdns_history" schema="" catalog="medapp" type="TABLE">
+      <column name="aid" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="request_id" sqlType="VARCHAR" precision="50" scale="0" nullable="false" jdbcType="12"/>
+      <column name="shd_detail_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="intervent_type_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="patient_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="pry_oid" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="sec_oid" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="sup_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="cid" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" remarks="Q29udHJhY3QgSUQ="/>
+      <column name="sel_week_day" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="start_time_hour" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="start_time_min" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="end_time_hour" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="end_time_min" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="current_week" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="current_year" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="assign_dtime" sqlType="BIGINT" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="status" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" def="MQ==" remarks="MS1PcGVuLCAyLSBDbG9zZWQ="/>
+      <column name="reassign" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" remarks="MCAtIE5vdCBDb25maXJtLCAxIC0gQ29uZmlybQ=="/>
+      <column name="job_date_assign" sqlType="DATE" precision="10" scale="0" nullable="false" jdbcType="91"/>
+      <primary-key name="PRIMARY" columns="aid"/>
+    </table>
+    <table name="audit" schema="" catalog="medapp" type="TABLE">
+      <column name="id" sqlType="MEDIUMINT UNSIGNED" precision="8" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="content" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="table_name" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="changetype" sqlType="ENUM" precision="6" scale="0" nullable="false" jdbcType="1"/>
+      <column name="changetime" sqlType="TIMESTAMP" precision="19" scale="0" nullable="false" jdbcType="93" def="Q1VSUkVOVF9USU1FU1RBTVA=" version="true"/>
+      <primary-key name="PRIMARY" columns="id"/>
+    </table>
+    <table name="contract_ceased_details" schema="" catalog="medapp" type="TABLE">
+      <column name="ceased_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="cid" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="ceased_date" sqlType="BIGINT" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="ceased_reason" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1"/>
+      <column name="ceased_reopen" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" def="MQ==" remarks="MS0gT3BlbiwgMi0gQ2xvc2Vk"/>
+      <column name="last_modify" sqlType="BIGINT" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <primary-key name="PRIMARY" columns="ceased_id"/>
+    </table>
+    <table name="contract_details" schema="" catalog="medapp" type="TABLE">
+      <column name="cid" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="pid" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="start_date" sqlType="BIGINT" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="end_date" sqlType="BIGINT" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="note" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1"/>
+      <column name="suspendable" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="last_ceased_date" sqlType="BIGINT" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="created_date" sqlType="BIGINT" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="last_modify" sqlType="BIGINT" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <primary-key name="PRIMARY" columns="cid"/>
+    </table>
+    <table name="contract_image" schema="" catalog="medapp" type="TABLE">
+      <column name="contract_img_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="cid" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="file" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1"/>
+      <primary-key name="PRIMARY" columns="contract_img_id"/>
+    </table>
+    <table name="contract_intervent_weekdays" schema="" catalog="medapp" type="TABLE">
+      <column name="ciw_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="cid" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="pid" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="intervent_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="intervent_hour" sqlType="VARCHAR" precision="10" scale="0" nullable="false" jdbcType="12"/>
+      <column name="week_days" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1"/>
+      <column name="total_weekdays" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="intervent_fortnightly" sqlType="VARCHAR" precision="10" scale="0" nullable="false" jdbcType="12"/>
+      <column name="suspendable" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="contract_tags" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1"/>
+      <column name="patient_address" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1"/>
+      <column name="patient_city" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1"/>
+      <column name="patient_zip" sqlType="VARCHAR" precision="50" scale="0" nullable="false" jdbcType="12"/>
+      <column name="patient_latlng" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1"/>
+      <column name="last_modify" sqlType="BIGINT" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <primary-key name="PRIMARY" columns="ciw_id"/>
+    </table>
+    <table name="contract_intervent_weekdays_bk" schema="" catalog="medapp" type="TABLE">
+      <column name="ciw_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="cid" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="pid" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="intervent_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="intervent_hour" sqlType="VARCHAR" precision="10" scale="0" nullable="false" jdbcType="12"/>
+      <column name="week_days" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1"/>
+      <column name="total_weekdays" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="intervent_fortnightly" sqlType="VARCHAR" precision="10" scale="0" nullable="false" jdbcType="12"/>
+      <column name="suspendable" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="contract_tags" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1"/>
+      <column name="patient_address" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1"/>
+      <column name="patient_city" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1"/>
+      <column name="patient_zip" sqlType="VARCHAR" precision="50" scale="0" nullable="false" jdbcType="12"/>
+      <column name="patient_latlng" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1"/>
+      <column name="last_modify" sqlType="BIGINT" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <primary-key name="PRIMARY" columns="ciw_id"/>
+    </table>
+    <table name="dblogs" schema="" catalog="medapp" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="idutente" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="dataora" sqlType="VARCHAR" precision="14" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="operazione" sqlType="CHAR" precision="1" scale="0" nullable="false" jdbcType="1" def="Jyc="/>
+      <column name="tabella" sqlType="VARCHAR" precision="128" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="idtabella" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="data" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1"/>
+      <column name="rollbackfrom" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1"/>
+      <column name="canrollback" sqlType="VARCHAR" precision="1" scale="0" nullable="false" jdbcType="12"/>
+      <column name="idpadre" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <index name="id" unique="true" columns="id"/>
+      <index name="utente" unique="false" columns="idutente"/>
+    </table>
+    <table name="dictionary" schema="" catalog="medapp" type="TABLE">
+      <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="word" sqlType="VARCHAR" precision="100" scale="0" nullable="false" jdbcType="12"/>
+      <column name="mean" sqlType="VARCHAR" precision="300" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="id"/>
+    </table>
+    <table name="district" schema="" catalog="medapp" type="TABLE">
+      <column name="did" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="P2000_CODE" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="dist_name" sqlType="VARCHAR" precision="128" scale="0" nullable="false" jdbcType="12"/>
+      <column name="created_date" sqlType="BIGINT" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <primary-key name="PRIMARY" columns="did"/>
+    </table>
+    <table name="intervention_fields" schema="" catalog="medapp" type="TABLE">
+      <column name="fid" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="int_type_asg_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="label_name" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1"/>
+      <column name="type" sqlType="VARCHAR" precision="100" scale="0" nullable="false" jdbcType="12"/>
+      <column name="options" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1"/>
+      <column name="required" sqlType="VARCHAR" precision="20" scale="0" nullable="false" jdbcType="12"/>
+      <column name="order" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="visible" sqlType="VARCHAR" precision="20" scale="0" nullable="false" jdbcType="12"/>
+      <column name="created_date" sqlType="BIGINT" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="edited_date" sqlType="BIGINT" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="status" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" def="MQ=="/>
+      <primary-key name="PRIMARY" columns="fid"/>
+    </table>
+    <table name="intervention_types" schema="" catalog="medapp" type="TABLE">
+      <column name="int_type_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="int_code" sqlType="VARCHAR" precision="20" scale="0" nullable="false" jdbcType="12"/>
+      <column name="int_type" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1"/>
+      <column name="int_time" sqlType="VARCHAR" precision="20" scale="0" nullable="false" jdbcType="12" def="JzAwOjAwJw=="/>
+      <column name="primary_mandatory" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="secondary_mandatory" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="supervisor_mandatory" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="primary_roles" sqlType="VARCHAR" precision="150" scale="0" nullable="false" jdbcType="12"/>
+      <column name="secondary_roles" sqlType="VARCHAR" precision="150" scale="0" nullable="false" jdbcType="12"/>
+      <column name="supervisor_roles" sqlType="VARCHAR" precision="150" scale="0" nullable="false" jdbcType="12"/>
+      <column name="int_status" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" def="MQ=="/>
+      <column name="last_modify" sqlType="BIGINT" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <primary-key name="PRIMARY" columns="int_type_id"/>
+    </table>
+    <table name="intervention_types_assign" schema="" catalog="medapp" type="TABLE">
+      <column name="int_type_asg_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="int_type_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="role" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="status" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="last_modify" sqlType="BIGINT" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <primary-key name="PRIMARY" columns="int_type_asg_id"/>
+    </table>
+    <table name="job_operator_code" schema="" catalog="medapp" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="id_job" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="code_op1" sqlType="VARCHAR" precision="20" scale="0" nullable="false" jdbcType="12"/>
+      <column name="code_op2" sqlType="VARCHAR" precision="20" scale="0" nullable="false" jdbcType="12"/>
+      <column name="code_op3" sqlType="VARCHAR" precision="20" scale="0" nullable="false" jdbcType="12"/>
+      <column name="last_modify" sqlType="BIGINT" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <primary-key name="PRIMARY" columns="id"/>
+    </table>
+    <table name="mt_role" schema="" catalog="medapp" type="TABLE">
+      <column name="rid" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="type" sqlType="VARCHAR" precision="200" scale="0" nullable="false" jdbcType="12"/>
+      <column name="status" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="created_date" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="edited_date" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="rid"/>
+    </table>
+    <table name="operator_default_starting_point" schema="" catalog="medapp" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="starting_point_address" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1"/>
+      <column name="last_update" sqlType="TIMESTAMP" precision="19" scale="0" nullable="false" jdbcType="93" def="Q1VSUkVOVF9USU1FU1RBTVA=" version="true"/>
+      <primary-key name="PRIMARY" columns="id"/>
+    </table>
+    <table name="operator_geo_location" schema="" catalog="medapp" type="TABLE">
+      <column name="geo_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="oid" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" remarks="b3BlcmF0b3IgaWQ="/>
+      <column name="aid" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" remarks="QXNzaWduIGpvYiAgbGlzdCBpZA=="/>
+      <column name="latitude" sqlType="DECIMAL" precision="10" scale="8" nullable="false" jdbcType="3"/>
+      <column name="longitude" sqlType="DECIMAL" precision="11" scale="8" nullable="false" jdbcType="3"/>
+      <column name="response_type" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" remarks="MS1TdGFydCB0aW1lICAyLVN0b3AgdGltZQ=="/>
+      <column name="created" sqlType="BIGINT" precision="19" scale="0" nullable="false" jdbcType="-5" remarks="IA=="/>
+      <primary-key name="PRIMARY" columns="geo_id"/>
+    </table>
+    <table name="operator_working_days" schema="" catalog="medapp" type="TABLE">
+      <column name="opt_wrk_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="oid" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="wrk_date" sqlType="BIGINT" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="leavetime" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" remarks="MS1Nb3JuaW5nLCAyLSBBZnRlcm5vb24sIDMtIEJvdGg="/>
+      <column name="note" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1"/>
+      <column name="last_modify" sqlType="BIGINT" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <primary-key name="PRIMARY" columns="opt_wrk_id"/>
+    </table>
+    <table name="operators" schema="" catalog="medapp" type="TABLE">
+      <column name="oid" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="firstname" sqlType="VARCHAR" precision="200" scale="0" nullable="false" jdbcType="12"/>
+      <column name="lastname" sqlType="VARCHAR" precision="150" scale="0" nullable="false" jdbcType="12"/>
+      <column name="email" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="username" sqlType="VARCHAR" precision="20" scale="0" nullable="false" jdbcType="12"/>
+      <column name="password" sqlType="VARCHAR" precision="100" scale="0" nullable="false" jdbcType="12"/>
+      <column name="role" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="dist_id" sqlType="VARCHAR" precision="250" scale="0" nullable="false" jdbcType="12"/>
+      <column name="tags" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1"/>
+      <column name="starting_point_address" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1"/>
+      <column name="contact_no" sqlType="BIGINT" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="ssn" sqlType="VARCHAR" precision="50" scale="0" nullable="false" jdbcType="12"/>
+      <column name="landline_no" sqlType="VARCHAR" precision="20" scale="0" nullable="false" jdbcType="12"/>
+      <column name="street" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1"/>
+      <column name="hb_no" sqlType="VARCHAR" precision="20" scale="0" nullable="false" jdbcType="12"/>
+      <column name="city" sqlType="VARCHAR" precision="200" scale="0" nullable="false" jdbcType="12"/>
+      <column name="postalcode" sqlType="VARCHAR" precision="100" scale="0" nullable="false" jdbcType="12"/>
+      <column name="provincecode" sqlType="VARCHAR" precision="100" scale="0" nullable="false" jdbcType="12"/>
+      <column name="mobile_udid" sqlType="VARCHAR" precision="50" scale="0" nullable="false" jdbcType="12"/>
+      <column name="note" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1"/>
+      <column name="created_date" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="edited_date" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="status" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" def="MQ=="/>
+      <column name="qualification" sqlType="VARCHAR" precision="128" scale="0" nullable="false" jdbcType="12"/>
+      <column name="dob" sqlType="DATE" precision="10" scale="0" nullable="false" jdbcType="91"/>
+      <column name="hours_contract" sqlType="VARCHAR" precision="10" scale="0" nullable="false" jdbcType="12"/>
+      <column name="suspended" sqlType="VARCHAR" precision="50" scale="0" nullable="false" jdbcType="12" def="J29mZic=" remarks="b24gLSBTdXNwZW5kZWQsIG9mZiAtIE5vbiBTdXNwZW5kZWQ="/>
+      <primary-key name="PRIMARY" columns="oid"/>
+      <index name="operator_index" unique="false" columns="status"/>
+    </table>
+    <table name="patients" schema="" catalog="medapp" type="TABLE">
+      <column name="pid" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="p2000_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="pname" sqlType="VARCHAR" precision="200" scale="0" nullable="false" jdbcType="12"/>
+      <column name="surname" sqlType="VARCHAR" precision="100" scale="0" nullable="false" jdbcType="12"/>
+      <column name="sex" sqlType="VARCHAR" precision="10" scale="0" nullable="false" jdbcType="12"/>
+      <column name="email" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="dist_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="ws_code" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="dob" sqlType="DATE" precision="10" scale="0" nullable="false" jdbcType="91"/>
+      <column name="contact_no" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1"/>
+      <column name="ssn" sqlType="VARCHAR" precision="50" scale="0" nullable="false" jdbcType="12"/>
+      <column name="address" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1"/>
+      <column name="zip_code" sqlType="VARCHAR" precision="50" scale="0" nullable="false" jdbcType="12"/>
+      <column name="latlang" sqlType="VARCHAR" precision="200" scale="0" nullable="false" jdbcType="12"/>
+      <column name="note" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1"/>
+      <column name="created_date" sqlType="BIGINT" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="edited_date" sqlType="BIGINT" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="created_by_type" sqlType="VARCHAR" precision="200" scale="0" nullable="false" jdbcType="12"/>
+      <column name="created_by" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="pstatus" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" def="MQ=="/>
+      <column name="year" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="service" sqlType="VARCHAR" precision="128" scale="0" nullable="false" jdbcType="12"/>
+      <column name="assisted" sqlType="VARCHAR" precision="128" scale="0" nullable="false" jdbcType="12"/>
+      <column name="provre" sqlType="VARCHAR" precision="128" scale="0" nullable="false" jdbcType="12"/>
+      <column name="pa_surname" sqlType="VARCHAR" precision="200" scale="0" nullable="false" jdbcType="12"/>
+      <column name="paying" sqlType="VARCHAR" precision="10" scale="0" nullable="false" jdbcType="12"/>
+      <column name="pa_address" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1"/>
+      <column name="pa_provre" sqlType="VARCHAR" precision="128" scale="0" nullable="false" jdbcType="12"/>
+      <column name="pa_cap" sqlType="VARCHAR" precision="128" scale="0" nullable="false" jdbcType="12"/>
+      <column name="pa_city" sqlType="VARCHAR" precision="128" scale="0" nullable="false" jdbcType="12"/>
+      <column name="city" sqlType="VARCHAR" precision="128" scale="0" nullable="false" jdbcType="12"/>
+      <column name="nas_city" sqlType="VARCHAR" precision="128" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="pid"/>
+      <index name="p2000_id" unique="true" columns="p2000_id"/>
+      <index name="pid" unique="false" columns="pid"/>
+    </table>
+    <table name="patients_critical_data" schema="" catalog="medapp" type="TABLE">
+      <column name="critical_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="EC_ContactPerson" sqlType="VARCHAR" precision="45" scale="0" nullable="true" jdbcType="12"/>
+      <column name="EC_ContactNumber" sqlType="VARCHAR" precision="45" scale="0" nullable="true" jdbcType="12"/>
+      <column name="EC_Relationship" sqlType="VARCHAR" precision="45" scale="0" nullable="true" jdbcType="12"/>
+      <column name="EC_Email" sqlType="VARCHAR" precision="45" scale="0" nullable="true" jdbcType="12"/>
+      <column name="EC_Address" sqlType="VARCHAR" precision="45" scale="0" nullable="true" jdbcType="12"/>
+      <column name="ID_PolicyNumber" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="ID_PolicyType" sqlType="VARCHAR" precision="45" scale="0" nullable="true" jdbcType="12"/>
+      <column name="ID_policyCompany" sqlType="VARCHAR" precision="45" scale="0" nullable="true" jdbcType="12"/>
+      <column name="ID_ExpiryDate" sqlType="VARCHAR" precision="45" scale="0" nullable="true" jdbcType="12"/>
+      <column name="ID_ContactNumber" sqlType="VARCHAR" precision="45" scale="0" nullable="true" jdbcType="12"/>
+      <column name="ED_Employer" sqlType="VARCHAR" precision="45" scale="0" nullable="true" jdbcType="12"/>
+      <column name="ED_designation" sqlType="VARCHAR" precision="45" scale="0" nullable="true" jdbcType="12"/>
+      <column name="ED_ContactNumber" sqlType="VARCHAR" precision="45" scale="0" nullable="true" jdbcType="12"/>
+      <column name="ED_Email" sqlType="VARCHAR" precision="45" scale="0" nullable="true" jdbcType="12"/>
+      <column name="PD_PhysicianName" sqlType="VARCHAR" precision="45" scale="0" nullable="true" jdbcType="12"/>
+      <column name="PD_ContactNumber" sqlType="VARCHAR" precision="45" scale="0" nullable="true" jdbcType="12"/>
+      <column name="PD_Email" sqlType="VARCHAR" precision="45" scale="0" nullable="true" jdbcType="12"/>
+      <column name="PD_Speciality" sqlType="VARCHAR" precision="45" scale="0" nullable="true" jdbcType="12"/>
+      <column name="VI_BloodGroup" sqlType="VARCHAR" precision="45" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="critical_id"/>
+    </table>
+    <table name="patients_info_details" schema="" catalog="medapp" type="TABLE">
+      <column name="piid" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="pid" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="rid" sqlType="VARCHAR" precision="128" scale="0" nullable="false" jdbcType="12"/>
+      <column name="info" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1"/>
+      <column name="entry_date" sqlType="BIGINT" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="upload _id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="status" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" def="MQ=="/>
+      <primary-key name="PRIMARY" columns="piid"/>
+      <index name="pid" unique="false" columns="pid"/>
+    </table>
+    <table name="patients_info_image" schema="" catalog="medapp" type="TABLE">
+      <column name="pi_img_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="piid" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="pid" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="files" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1"/>
+      <primary-key name="PRIMARY" columns="pi_img_id"/>
+    </table>
+    <table name="patients_intervention_extra_details" schema="" catalog="medapp" type="TABLE">
+      <column name="ped_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="pid" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="oid" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="aid" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" remarks="Sm9iIHRhYmxlIElE"/>
+      <column name="request_id" sqlType="VARCHAR" precision="100" scale="0" nullable="false" jdbcType="12"/>
+      <column name="intervent_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="start_time" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1"/>
+      <column name="end_time" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1"/>
+      <column name="duration" sqlType="TIME" precision="8" scale="0" nullable="false" jdbcType="92"/>
+      <column name="entry_date" sqlType="DATE" precision="10" scale="0" nullable="false" jdbcType="91"/>
+      <column name="note" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1"/>
+      <column name="start_location" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1"/>
+      <column name="end_location" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1"/>
+      <column name="start_address" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1"/>
+      <column name="end_address" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1"/>
+      <column name="data_coming_from" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" remarks="MS13ZWIsIDItIG1vYmlsZQ=="/>
+      <primary-key name="PRIMARY" columns="ped_id"/>
+    </table>
+    <table name="patients_intervention_values" schema="" catalog="medapp" type="TABLE">
+      <column name="pv_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="aid" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="pid" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="oid" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="request_id" sqlType="VARCHAR" precision="100" scale="0" nullable="false" jdbcType="12"/>
+      <column name="meta_name" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1"/>
+      <column name="meta_value" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1"/>
+      <column name="entry_date" sqlType="DATE" precision="10" scale="0" nullable="false" jdbcType="91"/>
+      <primary-key name="PRIMARY" columns="pv_id"/>
+    </table>
+    <table name="patients_login" schema="" catalog="medapp" type="TABLE">
+      <column name="p_login_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="pid" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="UserTypeID" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="username" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1"/>
+      <column name="password" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1"/>
+      <column name="status" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="profile" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="created" sqlType="TIMESTAMP" precision="19" scale="0" nullable="false" jdbcType="93" def="Q1VSUkVOVF9USU1FU1RBTVA="/>
+      <primary-key name="PRIMARY" columns="p_login_id"/>
+    </table>
+    <table name="patients_personal_data" schema="" catalog="medapp" type="TABLE">
+      <column name="pd_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="Weight" sqlType="VARCHAR" precision="45" scale="0" nullable="true" jdbcType="12"/>
+      <column name="Weight_DOE" sqlType="DATE" precision="10" scale="0" nullable="true" jdbcType="91"/>
+      <column name="Height" sqlType="VARCHAR" precision="45" scale="0" nullable="true" jdbcType="12"/>
+      <column name="Height_DOE" sqlType="DATE" precision="10" scale="0" nullable="true" jdbcType="91"/>
+      <column name="BP" sqlType="VARCHAR" precision="45" scale="0" nullable="true" jdbcType="12"/>
+      <column name="BP_DOE" sqlType="DATE" precision="10" scale="0" nullable="true" jdbcType="91"/>
+      <column name="Pulse" sqlType="VARCHAR" precision="45" scale="0" nullable="true" jdbcType="12"/>
+      <column name="Pulse_DOE" sqlType="DATE" precision="10" scale="0" nullable="true" jdbcType="91"/>
+      <column name="BloodSugarLevel" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="BloodSugar_DOE" sqlType="DATE" precision="10" scale="0" nullable="true" jdbcType="91"/>
+      <column name="Cholesterol" sqlType="VARCHAR" precision="45" scale="0" nullable="true" jdbcType="12"/>
+      <column name="Cholesterol_DOE" sqlType="DATE" precision="10" scale="0" nullable="true" jdbcType="91"/>
+      <column name="VI_BloodSugar" sqlType="VARCHAR" precision="45" scale="0" nullable="true" jdbcType="12"/>
+      <column name="BP_Systolic" sqlType="VARCHAR" precision="45" scale="0" nullable="true" jdbcType="12"/>
+      <column name="BP_Diastolic" sqlType="VARCHAR" precision="45" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="pd_id"/>
+    </table>
+    <table name="store_ws_sendata_response" schema="" catalog="medapp" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="dataSend" sqlType="VARCHAR" precision="250" scale="0" nullable="false" jdbcType="12"/>
+      <column name="ws_response" sqlType="VARCHAR" precision="250" scale="0" nullable="false" jdbcType="12"/>
+      <column name="created_date" sqlType="BIGINT" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <primary-key name="PRIMARY" columns="id"/>
+    </table>
+    <table name="tags" schema="" catalog="medapp" type="TABLE">
+      <column name="tid" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="tag_description" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1"/>
+      <column name="status" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" def="MQ=="/>
+      <column name="created_date" sqlType="DATE" precision="10" scale="0" nullable="false" jdbcType="91"/>
+      <column name="last_modify" sqlType="TIMESTAMP" precision="19" scale="0" nullable="false" jdbcType="93" def="Q1VSUkVOVF9USU1FU1RBTVA=" version="true"/>
+      <primary-key name="PRIMARY" columns="tid"/>
+    </table>
+    <table name="testcron" schema="" catalog="medapp" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="time" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="created" sqlType="TIMESTAMP" precision="19" scale="0" nullable="false" jdbcType="93" def="Q1VSUkVOVF9USU1FU1RBTVA=" version="true"/>
+      <primary-key name="PRIMARY" columns="id"/>
+    </table>
+    <table name="week_days" schema="" catalog="medapp" type="TABLE">
+      <column name="wid" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="week_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="week_name" sqlType="VARCHAR" precision="50" scale="0" nullable="false" jdbcType="12"/>
+      <column name="en_week_name" sqlType="VARCHAR" precision="10" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="wid"/>
+    </table>
+    <procedure name="assign_login_patients" schema="" catalog="medapp" type="1"/>
+  </data-source>
+</component>
